@@ -1,0 +1,25 @@
+@use 'breakpoints';
+
+@mixin small {
+    @media screen and (min-width: breakpoints.$small-screen) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (min-width: breakpoints.$medium-screen) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (min-width: breakpoints.$large-screen) {
+        @content;
+    }
+}
+
+@mixin xlarge {
+    @media screen and (min-width: breakpoints.$xlarge-screen) {
+        @content;
+    }
+}

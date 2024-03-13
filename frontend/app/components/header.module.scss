@@ -1,0 +1,41 @@
+@use '../styles/variables';
+@use '../styles/mixins' as screens;
+
+.stickyHeader {
+    padding: 0 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 128px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 4px variables.$primary-color;
+    box-sizing: border-box;
+
+    @include screens.small {
+        justify-content: flex-end;
+    }
+
+    @include screens.small {
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 16px;
+    }
+    
+    .searchContainer {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 4px;
+        
+        @include screens.small {
+            flex-direction: row;
+            width: 50%;
+        }
+    }
+}

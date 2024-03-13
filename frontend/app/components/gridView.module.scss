@@ -1,0 +1,25 @@
+@use '../styles/variables';
+@use '../styles/mixins' as screens;
+
+.cardsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 400px;
+    gap: 16px;
+
+    @include screens.small {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 400px;
+    }
+
+    @include screens.medium {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include screens.large{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

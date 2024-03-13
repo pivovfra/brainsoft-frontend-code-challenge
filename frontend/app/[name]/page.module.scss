@@ -1,0 +1,26 @@
+@use '../styles/mixins' as screens;
+
+.pageContainer {
+    @include screens.large {
+        margin: 0 64px;
+    }
+
+    @include screens.xlarge {
+        margin: 0 128px;
+    }
+
+    .infoContainer {
+        display: flex;
+        flex-direction: column;
+
+        @include screens.medium {
+            flex-direction: row;
+            gap: 32px;
+        }
+
+        .mainCardContainer {
+            flex: 1;
+            height: 50vh;
+        }
+    }
+}

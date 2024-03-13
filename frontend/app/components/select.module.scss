@@ -1,0 +1,8 @@
+@use '../styles/variables';
+
+.customSelect {
+  padding: 4px 16px;
+  border: 2px solid variables.$primary-color;
+  width: auto;
+  box-sizing: border-box;
+}

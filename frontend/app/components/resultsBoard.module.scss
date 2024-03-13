@@ -1,0 +1,30 @@
+@use '../styles/variables';
+@use '../styles/mixins' as screens;
+
+.resultsBoard {
+    margin: 160px 16px;
+    max-width: 2560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    .loadMoreButton {
+        width: 100%;
+        padding: 16px 16px;
+        align-self: center;
+        background-color: variables.$primary-color;
+
+        @include screens.small {
+            width: 50%;
+        }
+
+        @include screens.large {
+            width: 25%;
+        }
+
+        &:hover {
+            background-color: variables.$secondary-color;
+        }
+    }
+}

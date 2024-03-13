@@ -1,0 +1,76 @@
+@use '../styles/variables';
+@use '../styles/mixins' as screens;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+
+    .baseAttributes{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+
+
+        .animatedBar {
+            width: 100%;
+            height: 16px;
+            border-radius: 8px;
+            animation: moveBar 3s ease-in-out forwards; 
+            transform-origin: left;
+        }
+
+        .cpBar {
+            @extend .animatedBar;
+            background-color: #3498db;
+        }
+
+        .hpBar {
+            @extend .animatedBar;
+            background-color: green;
+        }
+
+        @keyframes moveBar {
+            0% {
+            transform: scaleX(0);
+            }
+            100% {
+            transform: scaleX(1);
+            }
+        }
+    }
+
+    .dimensions {
+        border: 2px solid variables.$primary-color;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: variables.$primary-color;
+    }
+
+    .evolutionsHeadline {
+        margin: 16px 0;
+
+        @include screens.small {
+            margin: 0;
+        }
+    }
+
+    .evolutionsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 64px;
+
+        @include screens.small {
+            flex-direction: row;
+            padding: 0;
+        }
+
+        .evolutionCardWrapper {
+            flex: 0 0 40%;
+        }
+    }
+}

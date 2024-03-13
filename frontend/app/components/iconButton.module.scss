@@ -1,0 +1,11 @@
+@use '../styles/variables';
+
+.button {
+    display: inline-block;
+    font-size: 0;
+    // border: 1px solid variables.$primary-color;
+    border: none;
+    padding: 4px;
+    border-bottom: 1px solid variables.$primary-color;
+    border-top: 1px solid variables.$primary-color;
+}

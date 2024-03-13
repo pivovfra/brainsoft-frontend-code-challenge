@@ -1,0 +1,31 @@
+@use '../styles/variables';
+@use '../styles/mixins' as screens;
+
+.buttonsContainer {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+
+    @include screens.small {
+        flex-direction: column;
+        order: -1;
+        flex-grow: 1;
+        width: auto;
+    }
+
+    .switchButton {
+        border-bottom: none;
+        flex-grow: 1;
+        border-radius: 10px 10px 0 0;
+
+        @include screens.small {
+            border-radius: 0;
+            border: 2px solid variables.$primary-color;
+        }
+    }
+
+    .selectedButton {
+        @extend .switchButton;
+        background-color: variables.$primary-color;
+    }
+}
